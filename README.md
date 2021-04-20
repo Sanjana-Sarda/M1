@@ -1,2 +1,2 @@
-# M1
+# M1: TinyType
  
