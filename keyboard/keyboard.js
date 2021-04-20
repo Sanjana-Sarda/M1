@@ -78,8 +78,6 @@ const Keyboard = {
         var prevKey = "";
 
         keyLayout.forEach(key => {
-            console.log(keyLayout.indexOf(key));
-            console.log(key);
             const keyElement = document.createElement("button");
             //const insertLineBreak = [13, 28, 45].includes(keyLayout.indexOf(prevKey));
             const insertLineBreak = ["f", "right", "z"].indexOf(key) !== -1;
