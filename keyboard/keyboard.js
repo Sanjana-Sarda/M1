@@ -232,6 +232,10 @@ const Keyboard = {
                 0, 1, 0, 0,
             ];
         }
+        else if (this.properties.keyv[30]===1) {
+            this.properties.keyv[30] = 0;
+            this.properties.keyv[29] = 1; 
+        }
         else {
             for (i = 0; i<this.properties.keyv.length; i++) {
                 if (this.properties.keyv[i]===1) {
@@ -246,20 +250,6 @@ const Keyboard = {
                 key.classList.add("keyboard__key--show");
             }
         }
-    },
-
-    open(initialValue, oninput, onclose) {
-        this.properties.value = initialValue || "";
-        this.eventHandlers.oninput = oninput;
-        this.eventHandlers.onclose = onclose;
-        this.elements.main.classList.remove("keyboard--hidden");
-    },
-    
-    close() {
-        this.properties.value = "";
-        this.eventHandlers.oninput = oninput;
-        this.eventHandlers.onclose = onclose;
-        this.elements.main.classList.add("keyboard--hidden");
     },
 
     _right(keyLayout) {
@@ -286,6 +276,10 @@ const Keyboard = {
                 0, 1, 0, 0,
             ];
         }
+        else if (this.properties.keyv[20]===1) {
+            this.properties.keyv[20] = 0;
+            this.properties.keyv[21] = 1; 
+        }
         else {
             for (j = 0; j<this.properties.keyv.length -1; j++) {
                 if (this.properties.keyv[j]===1) {
@@ -305,7 +299,23 @@ const Keyboard = {
                 key.classList.add("keyboard__key--show");
             }
         }
+    },
+
+    open(initialValue, oninput, onclose) {
+        this.properties.value = initialValue || "";
+        this.eventHandlers.oninput = oninput;
+        this.eventHandlers.onclose = onclose;
+        this.elements.main.classList.remove("keyboard--hidden");
+    },
+    
+    close() {
+        this.properties.value = "";
+        this.eventHandlers.oninput = oninput;
+        this.eventHandlers.onclose = onclose;
+        this.elements.main.classList.add("keyboard--hidden");
     }
+
+    
 };
 
 window.addEventListener("DOMContentLoaded", function() {
